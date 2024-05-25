@@ -11,5 +11,7 @@ namespace Game.Input {
 		MOVE_BACKWARD,
 		MOVE_LEFT,
 		MOVE_RIGHT,
+		KILL_ENEMY,
+		
 	}
 }

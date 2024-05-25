@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8479826126179872348
+--- !u!1 &2240639469541007091
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2820623276459940841}
-  - component: {fileID: 8077294754856760665}
-  - component: {fileID: 4618049042676861019}
-  - component: {fileID: 4231914157209422770}
-  - component: {fileID: 6683934571749783512}
-  m_Layer: 3
-  m_Name: RedEnemy
+  - component: {fileID: 2132661627612447790}
+  - component: {fileID: 3349005183566269634}
+  - component: {fileID: 2723442165164896155}
+  - component: {fileID: 4183457792406545901}
+  - component: {fileID: 7813660503074317314}
+  m_Layer: 0
+  m_Name: Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2820623276459940841
+--- !u!4 &2132661627612447790
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479826126179872348}
+  m_GameObject: {fileID: 2240639469541007091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 555.7514, y: 308.58633, z: -337.181}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8077294754856760665
+--- !u!33 &3349005183566269634
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479826126179872348}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4618049042676861019
+  m_GameObject: {fileID: 2240639469541007091}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2723442165164896155
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479826126179872348}
+  m_GameObject: {fileID: 2240639469541007091}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ea8ad1ee9efbe104899410b1127acb33, type: 2}
+  - {fileID: 2100000, guid: f1f39ee4e559c22418cad6af6294fbcd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,13 +85,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &4231914157209422770
-CapsuleCollider:
+--- !u!135 &4183457792406545901
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479826126179872348}
+  m_GameObject: {fileID: 2240639469541007091}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -103,24 +103,22 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6683934571749783512
+--- !u!114 &7813660503074317314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8479826126179872348}
+  m_GameObject: {fileID: 2240639469541007091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd95f184605816849aaf1e723d1dd282, type: 3}
+  m_Script: {fileID: 11500000, guid: ae5c273596a283b429a3077373b774d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed_: 2
-  accelerationCoefficient_: 1
-  attackDelay_: 2
-  projectile_: {fileID: 2240639469541007091, guid: ab8442557090b8a41ac10d5860d212ac, type: 3}
+  speed_: 10
+  accelerationCoefficient_: 8
+  lifeTime_: 5
+  damage_: 1

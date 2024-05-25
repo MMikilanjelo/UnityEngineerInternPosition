@@ -9,6 +9,7 @@ namespace Game.Input {
 			{ InputAction.MOVE_BACKWARD, Key.S },
 			{ InputAction.MOVE_LEFT, Key.A },
 			{ InputAction.MOVE_RIGHT, Key.D },
+			{InputAction.KILL_ENEMY , Key.Space}
 		};
 
 		public override bool IsInputActionJustPressed(InputAction action) {

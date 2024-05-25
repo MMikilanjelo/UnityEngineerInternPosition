@@ -5,10 +5,12 @@ using System;
 namespace Game.Managers {
 	public class GameManager : Singleton<GameManager> {
 		public GameState GameState { get; private set; }
+		public Transform Player {get;private set;}
 		public static event Action<GameState> BeforeGameStateChanged = delegate { };
 		public static event Action<GameState> AfterGameStateChanged = delegate { };
 		protected override void Awake() {
 			base.Awake();
+			Player = GameObject.FindGameObjectWithTag("Player").transform;
 		}
 		private void Start() => ChangeGameState(GameState.SetUp);
 		public void ChangeGameState(GameState newState) {

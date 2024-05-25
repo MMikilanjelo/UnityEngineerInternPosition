@@ -202,6 +202,8 @@ GameObject:
   - component: {fileID: 316998630}
   - component: {fileID: 316998632}
   - component: {fileID: 316998631}
+  - component: {fileID: 316998634}
+  - component: {fileID: 316998635}
   m_Layer: 0
   m_Name: PlayerHealthLable
   m_TagString: Untagged
@@ -272,6 +274,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316998629}
   m_CullTransparentMesh: 1
+--- !u!114 &316998634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316998629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb3af4b745e6cb4fa42c4e3529abe41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &316998635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316998629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1722b105d83a0ab49a827f499d477bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventChannel: {fileID: 11400000, guid: 8cd879ca3bdebac44bf7146a02fd72eb, type: 2}
+  UnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 316998634}
+        m_TargetAssemblyTypeName: Game.UI.Labels.PlayerHealthLabel, Assembly-CSharp
+        m_MethodName: UpdateHealthText
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &339941633
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,11 +522,6 @@ Transform:
   - {fileID: 1660245674}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &907589481 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-  m_PrefabInstance: {fileID: 9221699466030118929}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929133311
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,13 +638,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 8.31, z: -10}
+  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 14.98, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 194492880}
-  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!1 &1160654370
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +675,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1411044090}
-  - {fileID: 907589481}
   m_Father: {fileID: 744768769}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1179250793
@@ -651,6 +687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179250794}
   - component: {fileID: 1179250795}
+  - component: {fileID: 1179250796}
   m_Layer: 0
   m_Name: EnemySpawnerController
   m_TagString: Untagged
@@ -685,6 +722,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb768200178d47459a0a9c0e15c044b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpawnRadius_: 10
+  maxSpawnRadius_: 20
+--- !u!114 &1179250796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179250793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fcaab1601d29e9459530c74909380bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventChannel: {fileID: 11400000, guid: dafce1b3c86101649abe57f2e94e318d, type: 2}
+  UnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1179250795}
+        m_TargetAssemblyTypeName: Game.Controllers.EnemySpawnerController, Assembly-CSharp
+        m_MethodName: SpawnEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1273774018
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +871,7 @@ GameObject:
   - component: {fileID: 1363714908}
   - component: {fileID: 1363714907}
   - component: {fileID: 1363714906}
+  - component: {fileID: 1363714909}
   m_Layer: 0
   m_Name: SpawnEnemyButton
   m_TagString: Untagged
@@ -913,6 +981,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363714904}
   m_CullTransparentMesh: 1
+--- !u!114 &1363714909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363714904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1512b172e36de749b14f04d3ef1f565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnEnemyEventChannel: {fileID: 11400000, guid: dafce1b3c86101649abe57f2e94e318d, type: 2}
 --- !u!1 &1385159427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,6 +1318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1752461526}
+  - component: {fileID: 1752461528}
   m_Layer: 0
   m_Name: EntitySpawnerManager
   m_TagString: Untagged
@@ -1259,6 +1341,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 65300489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1752461528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752461525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8cbe37e41334604a995e3a795844d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1879065373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,7 +1505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8594019693542290512, guid: 00a1539df7a807e449b472989bbda605, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 8594019693542290512, guid: 00a1539df7a807e449b472989bbda605, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1454,63 +1548,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00a1539df7a807e449b472989bbda605, type: 3}
---- !u!1001 &9221699466030118929
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1160654371}
-    m_Modifications:
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820623276459940841, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479826126179872348, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
-      propertyPath: m_Name
-      value: RedEnemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 348e6ce4dfd80ea43a5b41224a05038f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 
 using UnityEngine;
-
+using Game.Entities;
 namespace Game.Components {
 	public class VelocityComponent {
 		private float accelerationCoefficientMultiplier_ { get; set; } = 1f;
